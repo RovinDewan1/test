@@ -3,17 +3,17 @@
 [ext_resource type="Script" uid="uid://c3k74ckfwlihk" path="res://SCirpt/char.gd" id="1_njpxk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5k12k"]
-size = Vector3(1, 1.13983, 1)
+size = Vector3(0.615845, 1.13983, 0.619873)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_njpxk"]
+[sub_resource type="BoxMesh" id="BoxMesh_njpxk"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_njpxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715079, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0.715079, -0.00109863)
 shape = SubResource("BoxShape3D_5k12k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.00663, 0, 0, 0, 0.558275, 0, 0, 0, 1.00663, 0, 0.724728, 0)
-mesh = SubResource("CylinderMesh_njpxk")
+transform = Transform3D(0.614246, 0, 0, 0, 1.14106, 0, 0, 0, 0.615354, 0, 0.724728, 0)
+mesh = SubResource("BoxMesh_njpxk")
