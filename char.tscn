@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjedmxsfh8bof"]
+
+[ext_resource type="Script" uid="uid://c3k74ckfwlihk" path="res://SCirpt/char.gd" id="1_njpxk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5k12k"]
+size = Vector3(1, 1.13983, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_njpxk"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_njpxk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715079, 0)
+shape = SubResource("BoxShape3D_5k12k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00663, 0, 0, 0, 0.558275, 0, 0, 0, 1.00663, 0, 0.724728, 0)
+mesh = SubResource("CylinderMesh_njpxk")

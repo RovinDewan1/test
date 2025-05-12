@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cawe1nyawydw8"]
+
+[ext_resource type="PackedScene" uid="uid://bjedmxsfh8bof" path="res://char.tscn" id="1_f3sb7"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_f3sb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f3sb7"]
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="world" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(0.36838, 0, 0, 0, 0.36838, 0, 0, 0, 0.36838, -0.0156533, 0.0127181, 0.0310685)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(2.71119, -0.00111303, -0.135852, 0.0246875, 2.67334, 0.470785, 0.133594, -0.471431, 2.67, 0.0434373, 2.7975, 3.61914)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00486612, 0.00891346, 0.00116754)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_f3sb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(13.4985, 0, 0, 0, 1.47853, 0, 0, 0, 11.2753, -0.000667214, 0.0033375, 0.00332934)
+mesh = SubResource("PlaneMesh_f3sb7")
